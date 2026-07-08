@@ -1,303 +1,495 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Ayush Giri - Full-Stack Developer</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ayush Giri — Full Stack Developer</title>
+<meta name="description" content="Ayush Giri — Full Stack Developer building across web, app, and AI. 18+ languages, open-source products including Gyaan AI and Indexly." />
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+<!-- Google Fonts used across the whole site (see style.css :root for where each is applied) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Tailwind for rapid, utility-first layout styling -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              'outline-variant': '#464554',
-              'on-surface': '#dfe2f1',
-              primary: '#c0c1ff',
-              'surface-container-highest': '#313540',
-              outline: '#908fa0',
-              'surface-tint': '#c0c1ff',
-              'on-secondary-fixed': '#3e0022',
-              'surface-dim': '#0f131d',
-              'tertiary-container': '#009eb9',
-              'inverse-primary': '#494bd6',
-              'on-error': '#690005',
-              'on-error-container': '#ffdad6',
-              'inverse-surface': '#dfe2f1',
-              'surface-container-low': '#171b26',
-              'inverse-on-surface': '#2c303b',
-              'on-tertiary-fixed': '#001f26',
-              'tertiary-fixed-dim': '#4cd7f6',
-              'on-tertiary': '#003640',
-              'secondary-fixed-dim': '#ffb0cd',
-              'on-primary-container': '#0d0096',
-              'on-primary-fixed-variant': '#2f2ebe',
-              'surface-container-lowest': '#0a0e18',
-              'on-surface-variant': '#c7c4d7',
-              'secondary-container': '#aa0266',
-              'on-secondary': '#640039',
-              secondary: '#ffb0cd',
-              'on-primary': '#1000a9',
-              'surface-variant': '#313540',
-              tertiary: '#4cd7f6',
-              'surface-container-high': '#262a35',
-              surface: '#0f131d'
-            },
-            borderRadius: {
-              DEFAULT: '0.25rem',
-              lg: '0.5rem',
-              xl: '0.75rem',
-              full: '9999px'
-            },
-            spacing: {
-              gutter: '32px',
-              'section-gap': '128px',
-              unit: '8px',
-              'container-max': '1280px',
-              'card-padding': '24px'
-            },
-            fontFamily: {
-              'body-lg': ['Plus Jakarta Sans'],
-              'display-lg': ['Plus Jakarta Sans'],
-              'display-lg-mobile': ['Plus Jakarta Sans'],
-              'headline-sm': ['Plus Jakarta Sans'],
-              'label-mono': ['JetBrains Mono'],
-              'headline-md': ['Plus Jakarta Sans'],
-              'body-md': ['Plus Jakarta Sans']
-            },
-            fontSize: {
-              'body-lg': ['18px', { lineHeight: '1.6', fontWeight: '400' }],
-              'display-lg': ['64px', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '800' }],
-              'display-lg-mobile': ['40px', { lineHeight: '1.2', letterSpacing: '-0.02em', fontWeight: '800' }],
-              'headline-sm': ['24px', { lineHeight: '1.4', fontWeight: '600' }],
-              'label-mono': ['14px', { lineHeight: '1.5', letterSpacing: '0.05em', fontWeight: '500' }],
-              'headline-md': ['32px', { lineHeight: '1.3', fontWeight: '700' }],
-              'body-md': ['16px', { lineHeight: '1.6', fontWeight: '400' }]
-            }
-          }
-        }
-      };
-    </script>
+<!-- All visual styling lives in style.css. Colors/fonts are set once at
+     the top of that file (:root variables) and used everywhere. -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <!-- External stylesheet keeps the markup focused on structure -->
-    <link href="style.css" rel="stylesheet" />
-  </head>
-
-  <body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
-    <!-- Ambient background layer for the soft, animated glow treatment -->
-    <div aria-hidden="true" class="ambient-bg">
-      <div class="glow-orb bg-[#4f46e5] w-[60vw] h-[60vw] top-[-30vw] left-[-20vw]"></div>
-      <div class="glow-orb bg-[#7c3aed] w-[50vw] h-[50vw] bottom-[-20vw] right-[-10vw]"></div>
-      <div class="glow-orb bg-[#2563eb] w-[55vw] h-[55vw] top-[30vh] left-[40vw]"></div>
+<!-- ============================================================
+     NAV BAR
+     "Ayush Giri" text + the small glowing dot both come from .logo.
+     Add/remove a link in .nav-links to add a new nav item — just
+     make sure the href="#id" matches a section id further down.
+     ============================================================ -->
+<header>
+  <nav>
+    <a href="#top" class="logo"><span class="dot"></span>Ayush Giri</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#stack">Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </div>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </nav>
+</header>
 
-    <!-- Fixed header with responsive navigation for desktop and mobile views -->
-    <header class="fixed top-0 w-full z-50 bg-surface/40 dark:bg-surface/40 backdrop-blur-xl border-b border-white/5 dark:border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
-      <div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto relative">
-        <a class="font-display-lg text-headline-sm font-extrabold text-on-surface dark:text-on-surface tracking-tighter text-glow" href="#">Ayush Giri</a>
+<main id="top">
 
-        <nav class="hidden md:flex gap-8 items-center">
-          <a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
-          <a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors" href="#expertise">Expertise</a>
-          <a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors" href="#projects">Projects</a>
-          <a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
-          <a class="rainbow-glow-btn px-6 py-2 rounded-full font-label-mono text-label-mono text-primary font-bold ml-4 text-glow" href="#">Resume</a>
-        </nav>
-
-        <button aria-controls="mobile-nav" aria-expanded="false" aria-label="Toggle Menu" class="md:hidden text-on-surface p-2 hover:text-primary transition-colors" data-mobile-menu-toggle type="button">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
-
-        <nav class="hidden" data-mobile-nav id="mobile-nav">
-          <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
-          <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#expertise">Expertise</a>
-          <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#projects">Projects</a>
-          <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
-          <a class="rainbow-glow-btn px-6 py-2 rounded-full font-label-mono text-label-mono text-primary font-bold mt-2 text-glow" href="#">Resume</a>
-        </nav>
+  <!-- ============================================================
+       HERO SECTION
+       - Edit the headline, sub-text, and the two buttons directly below.
+       - Wrap any word(s) in <span class="accent">...</span> to give
+         them the rainbow gradient highlight (see "products end to end").
+       - The terminal card on the right is 100% generated by script.js —
+         to change what it "types", edit the termScript array at the
+         top of script.js, NOT this HTML.
+       ============================================================ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><span class="pulse"></span>Available for open-source & freelance work</span>
+        <h1>Building <span class="accent">products end to end</span> — from pixels to infra.</h1>
+        <p class="lede">I'm Ayush Giri — a full stack developer working across web, app, and AI. I build the frontend, the backend, the logic that ties them together, and the AI models underneath when a product needs one.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View my work</a>
+          <a href="https://github.com/ayushgiriai21-cmd" target="_blank" rel="noopener" class="btn btn-ghost">GitHub profile ↗</a>
+        </div>
       </div>
-    </header>
 
-    <main class="pt-32 pb-section-gap px-gutter max-w-container-max mx-auto flex flex-col gap-16 md:gap-24">
-      <!-- Hero section introduces the developer and highlights key value propositions -->
-      <section class="min-h-[80vh] flex flex-col justify-center gap-8 relative" id="hero">
-        <div class="space-y-4">
-          <h2 class="font-label-mono text-label-mono text-primary tracking-widest uppercase text-glow">Full-Stack Developer &amp; Open Source Innovator</h2>
-          <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface max-w-4xl drop-shadow-lg">
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#acedff] to-[#ffb0cd]" id="typewriter-text"></span><span class="cursor"></span>
-          </h1>
-          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-6 relative z-10">
-            I engineer high-performance web ecosystems for businesses, schools, and fast-growing startups. 100% SEO-friendly, blazing fast, and securely built from the ground up.
-          </p>
+      <!-- term-body is intentionally empty — script.js fills it in live -->
+      <div class="term-card">
+        <div class="term-bar">
+          <span></span><span></span><span></span>
+          <span class="title">ayush@stack</span>
+        </div>
+        <div class="term-body" id="term-body"></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hairline" />
+
+  <!-- ============================================================
+       ABOUT SECTION
+       - Edit the 3 paragraphs in .about-text freely.
+       - To add/change a stat card (the "2+", "18+" boxes), copy one
+         <div class="stat-card">...</div> block. Layout is automatic.
+       ============================================================ -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">// about</span>
+        <h2>Self-taught, AI-assisted, and always building.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>I'm a full stack developer who works across the entire product — <strong>frontend, backend, and the unique logic</strong> that ties a system together, across web, mobile, and desktop. Over the last two years I've taught myself everything from the ground up, using both traditional learning and AI-assisted learning to move fast across 18+ languages and frameworks.</p>
+          <p>Alongside the core stack, I also work in <strong>AI and ML engineering</strong> — building models, fine-tuning existing ones, and building the products around them, from developer tools to ChatGPT-style applications.</p>
+          <p>I build in the open. Most of what I make starts as an <strong>open-source project</strong>, built to solve a real, specific problem rather than to follow a trend.</p>
         </div>
 
-        <div class="flex flex-wrap gap-4 mt-8">
-          <a class="rainbow-glow-btn px-8 py-4 rounded-full font-label-mono text-label-mono text-on-surface font-bold flex items-center gap-2" href="#contact">
-            Get In Touch <span class="material-symbols-outlined text-sm icon-glow" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
-          </a>
-          <a class="glass-panel px-8 py-4 rounded-full font-label-mono text-label-mono text-on-surface-variant hover:text-primary hover:bg-primary/5 transition-all" href="#">
-            Download CV
-          </a>
-        </div>
-
-        <!-- Summary metrics highlight experience, performance, and SEO strengths -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-          <div class="glass-panel p-card-padding rounded-xl flex items-center gap-4 hover:bg-primary/5 transition-colors">
-            <span class="material-symbols-outlined text-primary text-3xl icon-glow" style="font-variation-settings: 'FILL' 1;">history</span>
-            <div>
-              <div class="font-headline-sm text-headline-sm text-on-surface text-glow">4+ Years</div>
-              <div class="font-label-mono text-label-mono text-primary/80 text-xs uppercase">Experience</div>
-            </div>
+        <!-- STAT CARDS: copy a whole <div class="stat-card"> block to add a new one -->
+        <div class="stat-row reveal">
+          <div class="stat-card">
+            <div class="num">2+</div>
+            <div class="label">Years building, self &amp; AI-taught</div>
           </div>
-          <div class="glass-panel p-card-padding rounded-xl flex items-center gap-4 hover:bg-tertiary/5 transition-colors">
-            <span class="material-symbols-outlined text-tertiary text-3xl icon-glow" style="font-variation-settings: 'FILL' 1;">speed</span>
-            <div>
-              <div class="font-headline-sm text-headline-sm text-on-surface text-glow">97-100%</div>
-              <div class="font-label-mono text-label-mono text-tertiary/80 text-xs uppercase">Lighthouse Score</div>
-            </div>
+          <div class="stat-card">
+            <div class="num">18+</div>
+            <div class="label">Programming languages</div>
           </div>
-          <div class="glass-panel p-card-padding rounded-xl flex items-center gap-4 hover:bg-secondary/5 transition-colors">
-            <span class="material-symbols-outlined text-secondary text-3xl icon-glow" style="font-variation-settings: 'FILL' 1;">search_check</span>
-            <div>
-              <div class="font-headline-sm text-headline-sm text-on-surface text-glow">100% SEO</div>
-              <div class="font-label-mono text-label-mono text-secondary/80 text-xs uppercase">Friendly Architecture</div>
-            </div>
+          <div class="stat-card">
+            <div class="num">2</div>
+            <div class="label">Active open-source products</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">Full</div>
+            <div class="label">Stack — web, app &amp; AI</div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <div class="w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+  <hr class="hairline" />
 
-      <!-- Expertise section blends philosophy with the core technology stack -->
-      <section class="scroll-mt-32" id="expertise">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div class="lg:col-span-5 space-y-6" id="about">
-            <h3 class="font-headline-md text-headline-md text-on-surface text-glow">Structural Integrity &amp; Precision.</h3>
-            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-              Passionate about structural integrity, I specialize in architecting full-backend systems, zero-trust personalized secure servers, and accessible open-source projects.
-            </p>
+  <!-- ============================================================
+       SKILLS SECTION
+       To add a new skill card, copy one whole
+         <div class="skill-card reveal"> ... </div>
+       block (needs .icon-bar, <h3>, <p>). The grid auto-adjusts.
+       ============================================================ -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">// skills</span>
+        <h2>What I actually build with.</h2>
+        <p>From the interface a user touches to the model underneath — I work through the full depth of a product.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="icon-bar"></div>
+          <h3>Full Stack Development</h3>
+          <p>Frontend, backend, and the custom logic and architecture that connects them — for web, app, and desktop.</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon-bar"></div>
+          <h3>App &amp; Cross-Platform Development</h3>
+          <p>Native and cross-platform apps for mobile and desktop, from Flutter and React Native to SwiftUI.</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon-bar"></div>
+          <h3>AI &amp; ML Engineering</h3>
+          <p>Building AI models from scratch, fine-tuning existing models, and constructing LLMs end to end.</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon-bar"></div>
+          <h3>Open Source Development</h3>
+          <p>Designing and maintaining original open-source projects built around real problems.</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon-bar"></div>
+          <h3>Applied Software Engineering</h3>
+          <p>Software, tools, and utilities built with the same rigor as production-grade products.</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon-bar"></div>
+          <h3>Systems &amp; Analytics</h3>
+          <p>Custom analytics, data infrastructure, and the systems-level thinking that supports a product at scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hairline" />
+
+  <!-- ============================================================
+       TECH STACK SECTION (tabbed)
+       HOW TO ADD A NEW TAB (e.g. "Databases"):
+         1. Add a button in .stack-tabs:
+              <button class="stack-tab" data-tab="db">Databases</button>
+         2. Add a matching panel anywhere below it:
+              <div class="stack-panel" id="panel-db"> ... your chips ... </div>
+         script.js already handles the click-to-switch logic for ANY
+         tab/panel pair that follows this data-tab / id="panel-X" pattern
+         — no JavaScript edits needed.
+
+       HOW TO ADD A NEW ITEM INSIDE A TAB:
+         Just add another <span class="chip">Name</span> inside the
+         relevant .chip-row. Wraps automatically.
+       ============================================================ -->
+  <section id="stack">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">// tech stack</span>
+        <h2>The languages and frameworks I build with.</h2>
+        <p>Eighteen-plus languages and a toolbox that spans web, mobile, desktop, and backend infrastructure.</p>
+      </div>
+
+      <div class="reveal">
+        <!-- TABS: each button's data-tab must match a panel's id="panel-X" below -->
+        <div class="stack-tabs" role="tablist">
+          <button class="stack-tab active" data-tab="langs">Languages</button>
+          <button class="stack-tab" data-tab="frontend">Front-End Web</button>
+          <button class="stack-tab" data-tab="backend">Back-End Web</button>
+          <button class="stack-tab" data-tab="app">App Development</button>
+          <button class="stack-tab" data-tab="ui">CSS &amp; UI</button>
+        </div>
+
+        <!-- LANGUAGES TAB -->
+        <div class="stack-panel active" id="panel-langs">
+          <div class="langs-band">
+            <span class="lang-pill"><span class="swatch"></span>Python</span>
+            <span class="lang-pill"><span class="swatch"></span>Java</span>
+            <span class="lang-pill"><span class="swatch"></span>JavaScript</span>
+            <span class="lang-pill"><span class="swatch"></span>TypeScript</span>
+            <span class="lang-pill"><span class="swatch"></span>C++</span>
+            <span class="lang-pill"><span class="swatch"></span>Objective-C</span>
+            <span class="lang-pill"><span class="swatch"></span>Go</span>
+            <span class="lang-pill"><span class="swatch"></span>Rust</span>
+            <span class="lang-pill"><span class="swatch"></span>Lua</span>
+            <span class="lang-pill"><span class="swatch"></span>Kotlin</span>
+            <span class="lang-pill"><span class="swatch"></span>Swift</span>
+            <span class="lang-pill"><span class="swatch"></span>Dart</span>
+            <span class="lang-pill"><span class="swatch"></span>PHP</span>
+            <span class="lang-pill"><span class="swatch"></span>Ruby</span>
+            <span class="lang-pill"><span class="swatch"></span>Scala</span>
+            <span class="lang-pill"><span class="swatch"></span>Elixir</span>
+            <span class="lang-pill"><span class="swatch"></span>Bash / Shell</span>
           </div>
+        </div>
 
-          <div class="lg:col-span-7 glass-panel p-8 rounded-2xl relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-50"></div>
-            <h4 class="font-label-mono text-label-mono text-primary/80 mb-6 relative z-10">TECHNOLOGY STACK</h4>
-            <div class="flex flex-wrap gap-3 relative z-10">
-              <span class="px-4 py-2 rounded-full glass-modal font-label-mono text-label-mono text-primary text-xs hover:bg-primary/20 hover:text-white transition-colors cursor-default">Python</span>
-              <span class="px-4 py-2 rounded-full glass-modal font-label-mono text-label-mono text-primary text-xs hover:bg-primary/20 hover:text-white transition-colors cursor-default">JS/TS</span>
-              <span class="px-4 py-2 rounded-full glass-modal font-label-mono text-label-mono text-primary text-xs hover:bg-primary/20 hover:text-white transition-colors cursor-default">Go</span>
-              <span class="px-4 py-2 rounded-full glass-modal font-label-mono text-label-mono text-primary text-xs hover:bg-primary/20 hover:text-white transition-colors cursor-default">C/C++</span>
-              <span class="px-4 py-2 rounded-full glass-modal font-label-mono text-label-mono text-primary text-xs hover:bg-primary/20 hover:text-white transition-colors cursor-default">Lua</span>
-              <span class="px-4 py-2 rounded-full glass-modal font-label-mono text-label-mono text-tertiary text-xs hover:bg-tertiary/20 hover:text-white transition-colors cursor-default">React</span>
-              <span class="px-4 py-2 rounded-full glass-modal font-label-mono text-label-mono text-tertiary text-xs hover:bg-tertiary/20 hover:text-white transition-colors cursor-default">Next.js</span>
-              <span class="px-4 py-2 rounded-full glass-modal font-label-mono text-label-mono text-tertiary text-xs hover:bg-tertiary/20 hover:text-white transition-colors cursor-default">Node.js</span>
-              <span class="px-4 py-2 rounded-full glass-modal font-label-mono text-label-mono text-secondary text-xs hover:bg-secondary/20 hover:text-white transition-colors cursor-default">Supabase</span>
-              <span class="px-4 py-2 rounded-full glass-modal font-label-mono text-label-mono text-secondary text-xs hover:bg-secondary/20 hover:text-white transition-colors cursor-default">Clerk</span>
-              <span class="px-4 py-2 rounded-full glass-modal font-label-mono text-label-mono text-on-surface-variant text-xs hover:bg-white/20 hover:text-white transition-colors cursor-default">Git/GitHub</span>
-              <span class="px-4 py-2 rounded-full glass-modal font-label-mono text-label-mono text-on-surface-variant text-xs hover:bg-white/20 hover:text-white transition-colors cursor-default">Vercel</span>
+        <!-- FRONT-END WEB TAB -->
+        <div class="stack-panel" id="panel-frontend">
+          <div class="stack-group">
+            <span class="group-label">// core &amp; SSR frameworks</span>
+            <div class="chip-row">
+              <span class="chip">React.js</span>
+              <span class="chip">Angular</span>
+              <span class="chip">Vue.js</span>
+              <span class="chip">Svelte</span>
+              <span class="chip">Next.js</span>
+              <span class="chip">Nuxt.js</span>
+              <span class="chip">SvelteKit</span>
+              <span class="chip">Remix</span>
+              <span class="chip">Astro</span>
+              <span class="chip">Gatsby</span>
+              <span class="chip">Qwik</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <span class="group-label">// lightweight &amp; specialized</span>
+            <div class="chip-row">
+              <span class="chip">SolidJS</span>
+              <span class="chip">Preact</span>
+              <span class="chip">Ember.js</span>
+              <span class="chip">Backbone.js</span>
+              <span class="chip">Alpine.js</span>
+              <span class="chip">Lit</span>
+              <span class="chip">HTMX</span>
+              <span class="chip">jQuery</span>
+              <span class="chip">Blazor WebAssembly</span>
             </div>
           </div>
         </div>
-      </section>
 
-      <div class="w-full h-px bg-gradient-to-r from-transparent via-tertiary/30 to-transparent"></div>
-
-      <!-- Featured projects section showcases representative work and external links -->
-      <section class="scroll-mt-32 space-y-12" id="projects">
-        <h3 class="font-headline-md text-headline-md text-on-surface text-center text-glow">Featured Projects</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="glass-panel p-6 rounded-2xl hover-rainbow-card flex flex-col h-full group">
-            <div class="h-48 w-full bg-surface-container-high/50 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center border border-white/5 group-hover:bg-primary/10 transition-colors">
-              <span class="material-symbols-outlined text-6xl text-primary/50 group-hover:text-primary transition-colors icon-glow">language</span>
-            </div>
-            <div class="mt-auto">
-              <div class="flex justify-between items-start mb-2">
-                <h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Indexly</h4>
-                <a class="text-outline hover:text-primary transition-colors" href="https://indexly-snowly.vercel.app" target="_blank">
-                  <span class="material-symbols-outlined icon-glow">open_in_new</span>
-                </a>
-              </div>
-              <p class="font-body-md text-body-md text-on-surface-variant mb-4 text-sm">Developer Productivity Tool. Automation for website indexing with real-time analytics.</p>
-              <div class="flex gap-2">
-                <span class="font-label-mono text-[10px] text-tertiary bg-tertiary/20 border border-tertiary/30 px-2 py-1 rounded">Next.js</span>
-                <span class="font-label-mono text-[10px] text-primary bg-primary/20 border border-primary/30 px-2 py-1 rounded">Automation</span>
-              </div>
+        <!-- BACK-END WEB TAB -->
+        <div class="stack-panel" id="panel-backend">
+          <div class="stack-group">
+            <span class="group-label">// node &amp; python</span>
+            <div class="chip-row">
+              <span class="chip">Express.js</span>
+              <span class="chip">NestJS</span>
+              <span class="chip">Koa.js</span>
+              <span class="chip">Fastify</span>
+              <span class="chip">AdonisJS</span>
+              <span class="chip">Sails.js</span>
+              <span class="chip">Strapi</span>
+              <span class="chip">Django</span>
+              <span class="chip">Flask</span>
+              <span class="chip">FastAPI</span>
+              <span class="chip">Sanic</span>
             </div>
           </div>
-
-          <div class="glass-panel p-6 rounded-2xl hover-rainbow-card flex flex-col h-full group">
-            <div class="h-48 w-full bg-surface-container-high/50 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center border border-white/5 group-hover:bg-secondary/10 transition-colors">
-              <span class="material-symbols-outlined text-6xl text-secondary/50 group-hover:text-secondary transition-colors icon-glow">school</span>
+          <div class="stack-group">
+            <span class="group-label">// jvm, .net, ruby &amp; php</span>
+            <div class="chip-row">
+              <span class="chip">Spring Boot</span>
+              <span class="chip">Play Framework</span>
+              <span class="chip">ASP.NET Core</span>
+              <span class="chip">Laravel</span>
+              <span class="chip">Symfony</span>
+              <span class="chip">CodeIgniter</span>
+              <span class="chip">CakePHP</span>
+              <span class="chip">Ruby on Rails</span>
+              <span class="chip">Sinatra</span>
             </div>
-            <div class="mt-auto">
-              <div class="flex justify-between items-start mb-2">
-                <h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors">Gyaan AI</h4>
-                <a class="text-outline hover:text-secondary transition-colors" href="https://gyaan-ai-beta.vercel.app" target="_blank">
-                  <span class="material-symbols-outlined icon-glow">open_in_new</span>
-                </a>
-              </div>
-              <p class="font-body-md text-body-md text-on-surface-variant mb-4 text-sm">Open-Source EdTech. AI-driven teaching for 20+ rural languages.</p>
-              <div class="flex gap-2">
-                <span class="font-label-mono text-[10px] text-secondary bg-secondary/20 border border-secondary/30 px-2 py-1 rounded">AI/ML</span>
-                <span class="font-label-mono text-[10px] text-primary bg-primary/20 border border-primary/30 px-2 py-1 rounded">Open Source</span>
-              </div>
+          </div>
+          <div class="stack-group">
+            <span class="group-label">// go, rust &amp; elixir</span>
+            <div class="chip-row">
+              <span class="chip">Fiber</span>
+              <span class="chip">Gin</span>
+              <span class="chip">Echo</span>
+              <span class="chip">Rocket</span>
+              <span class="chip">Actix-web</span>
+              <span class="chip">Phoenix</span>
             </div>
           </div>
         </div>
-      </section>
 
-      <div class="w-full h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent"></div>
+        <!-- APP DEVELOPMENT TAB -->
+        <div class="stack-panel" id="panel-app">
+          <div class="stack-group">
+            <span class="group-label">// cross-platform &amp; native</span>
+            <div class="chip-row">
+              <span class="chip">Flutter</span>
+              <span class="chip">React Native</span>
+              <span class="chip">SwiftUI</span>
+              <span class="chip">Jetpack Compose</span>
+              <span class="chip">Ionic</span>
+              <span class="chip">.NET MAUI</span>
+              <span class="chip">NativeScript</span>
+              <span class="chip">Expo</span>
+              <span class="chip">Qt</span>
+              <span class="chip">Android SDK</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <span class="group-label">// desktop</span>
+            <div class="chip-row">
+              <span class="chip">Electron</span>
+              <span class="chip">Tauri</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <span class="group-label">// backend-as-a-service</span>
+            <div class="chip-row">
+              <span class="chip">Firebase</span>
+              <span class="chip">Supabase</span>
+              <span class="chip">Appwrite</span>
+              <span class="chip">AWS Amplify</span>
+              <span class="chip">LoopBack</span>
+              <span class="chip">Meteor</span>
+            </div>
+          </div>
+        </div>
 
-      <!-- Contact section includes a form and a convenient copy-to-clipboard action -->
-      <section class="scroll-mt-32 max-w-2xl mx-auto w-full text-center space-y-8" id="contact">
-        <h3 class="font-headline-md text-headline-md text-on-surface text-glow">Let's Build Something Revolutionary</h3>
-        <form class="glass-panel p-8 rounded-2xl space-y-6 text-left relative">
-          <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-tertiary/5 opacity-50 rounded-2xl pointer-events-none"></div>
-          <div class="relative z-10">
-            <input class="w-full bg-transparent border-0 border-b border-white/10 focus:ring-0 focus:border-primary text-on-surface font-body-md placeholder:text-outline py-3 transition-colors hover:border-primary/50" placeholder="Name" type="text" />
+        <!-- CSS & UI TAB -->
+        <div class="stack-panel" id="panel-ui">
+          <div class="chip-row">
+            <span class="chip">Tailwind CSS</span>
+            <span class="chip">Bootstrap</span>
+            <span class="chip">Material-UI</span>
+            <span class="chip">Chakra UI</span>
+            <span class="chip">Bulma</span>
+            <span class="chip">Semantic UI</span>
+            <span class="chip">Foundation</span>
+            <span class="chip">Ant Design</span>
+            <span class="chip">DaisyUI</span>
+            <span class="chip">PrimeReact / PrimeVue</span>
           </div>
-          <div class="relative z-10">
-            <input class="w-full bg-transparent border-0 border-b border-white/10 focus:ring-0 focus:border-primary text-on-surface font-body-md placeholder:text-outline py-3 transition-colors hover:border-primary/50" placeholder="Email" type="email" />
-          </div>
-          <div class="relative z-10">
-            <textarea class="w-full bg-transparent border-0 border-b border-white/10 focus:ring-0 focus:border-primary text-on-surface font-body-md placeholder:text-outline py-3 transition-colors resize-none hover:border-primary/50" placeholder="Message" rows="4"></textarea>
-          </div>
-          <button class="w-full rainbow-glow-btn py-4 rounded-xl font-label-mono text-label-mono text-on-surface font-bold mt-4 relative z-10 text-glow" type="submit">
-            Send Message
-          </button>
-        </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="pt-8">
-          <button class="font-label-mono text-label-mono text-primary hover:text-tertiary transition-colors flex items-center justify-center gap-2 mx-auto cursor-pointer hover:drop-shadow-[0_0_8px_rgba(192,193,255,0.8)]" data-copy-email type="button">
+  <hr class="hairline" />
+
+  <!-- ============================================================
+       PROJECTS SECTION
+       TO ADD A NEW PROJECT: copy one ENTIRE block below, from
+       <div class="project-card pX reveal"> down to its closing </div>.
+         1. Change "pX" to a new unique class, e.g. "p4"
+         2. In style.css, add ONE line for its glow color:
+              .p4 .glow { background: var(--prism-cyan); }   (or any color)
+         3. Edit the tagchip / title / link / description / feature pills
+       That's it — no other layout work needed, it matches automatically.
+       ============================================================ -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">// projects</span>
+        <h2>Selected work.</h2>
+        <p>Open-source products and an industrial build, each solving a problem I saw firsthand.</p>
+      </div>
+
+      <!-- PROJECT 1: Gyaan AI -->
+      <div class="project-card p1 reveal">
+        <div class="project-visual p1">
+          <div class="glow"></div>
+          <span class="tagchip">Live · Open Source</span>
+          <h3>Gyaan AI</h3>
+          <div class="sub">gyaan-ai-beta.vercel.app</div>
+        </div>
+        <div class="project-content">
+          <p>An AI learning platform built for students in rural areas who struggle to learn in a language and format that fits them. Gyaan AI covers Physics, Chemistry, Maths, and Biology, and teaches every topic through a structured, multi-step method rather than a single explanation: it first builds foundational understanding — for example, teaching the underlying concepts (like types of triangles) before the subject itself — then walks through the topic in stages, reinforces it with interactive simulations, and finishes with a short three-question quiz. Quiz results are analyzed automatically, and any topic the student hasn't understood is explained again in writing. The whole experience is available in 20+ languages.</p>
+          <div class="feats">
+            <span class="feat">Foundation-first, multi-step teaching method</span>
+            <span class="feat">Physics · Chemistry · Maths · Biology</span>
+            <span class="feat">Interactive simulations</span>
+            <span class="feat">Adaptive quiz analysis</span>
+            <span class="feat">20+ languages supported</span>
+          </div>
+          <a href="https://gyaan-ai-beta.vercel.app" target="_blank" rel="noopener" class="project-link">Visit Gyaan AI ↗</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 2: Indexly -->
+      <div class="project-card p2 reveal">
+        <div class="project-visual p2">
+          <div class="glow"></div>
+          <span class="tagchip">Live · Free &amp; Open Source</span>
+          <h3>Indexly</h3>
+          <div class="sub">indexly-snowy.vercel.app</div>
+        </div>
+        <div class="project-content">
+          <p>A developer-focused indexing tool that solves a real distribution problem: getting a website indexed across every major search engine individually is slow and repetitive. Indexly gets a site indexed across a wide range of search engines — including Google, Bing, Yandex, Naver, and DuckDuckGo — in just two simple steps, with built-in analytics to track indexing performance. It's completely free and open source.</p>
+          <div class="feats">
+            <span class="feat">Index in 2 simple steps</span>
+            <span class="feat">Covers Google, Bing, Yandex, Naver, DuckDuckGo &amp; more</span>
+            <span class="feat">Built-in indexing analytics</span>
+            <span class="feat">Free &amp; open source</span>
+          </div>
+          <a href="https://indexly-snowy.vercel.app" target="_blank" rel="noopener" class="project-link">Visit Indexly ↗</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: Industrial Project (placeholder until it ships) -->
+      <div class="project-card p3 reveal">
+        <div class="project-visual p3">
+          <div class="glow"></div>
+          <span class="tagchip">In Development</span>
+          <h3>Industrial Project</h3>
+          <div class="sub">details coming soon</div>
+        </div>
+        <div class="project-content">
+          <p>A new industrial-scale project currently in active development. It's close to completion, and details will be added here once it's ready to share.</p>
+          <div class="feats">
+            <span class="feat">Work in progress</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADD YOUR NEXT PROJECT HERE — copy a whole block above this comment -->
+    </div>
+  </section>
+
+  <hr class="hairline" />
+
+  <!-- ============================================================
+       CONTACT SECTION
+       To add a new contact method, copy one <a class="social-pill">
+       block (needs an <svg> icon + label text). All icons here are
+       official, brand-style outline icons (free to use, no license
+       needed) so everything stays visually consistent.
+       ============================================================ -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-card reveal">
+        <h2>Let's build something.</h2>
+        <p>Open to collaborating on open-source projects, full stack product builds, or AI/ML work — or just talking shop about code.</p>
+        <div class="social-row">
+
+          <!-- Email -->
+          <a href="mailto:ayushgiri.ai.21@gmail.com" class="social-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
             ayushgiri.ai.21@gmail.com
-            <span class="material-symbols-outlined text-sm icon-glow">content_copy</span>
-          </button>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer carries the branding and social links -->
-    <footer class="bg-surface-container-lowest/50 dark:bg-surface-container-lowest/50 backdrop-blur-md border-t border-primary/10 w-full py-16 px-gutter">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-unit max-w-container-max mx-auto text-center md:text-left">
-        <div class="font-display-lg text-body-lg font-bold text-on-surface text-glow">Ayush Giri</div>
-        <div class="font-label-mono text-label-mono text-outline dark:text-outline">© 2026 Ayush Giri. Built for performance.</div>
-        <div class="flex gap-6">
-          <a class="font-label-mono text-label-mono text-outline hover:text-primary transition-colors duration-300 hover:-translate-y-1 hover:drop-shadow-[0_0_8px_rgba(192,193,255,0.6)]" href="#">LinkedIn</a>
-          <a class="font-label-mono text-label-mono text-outline hover:text-primary transition-colors duration-300 hover:-translate-y-1 flex items-center hover:drop-shadow-[0_0_8px_rgba(192,193,255,0.6)]" href="https://github.com/ayushgiriai21-cmd">
-            <img class="w-5 h-5 opacity-70 hover:opacity-100 transition-opacity filter drop-shadow-[0_0_8px_rgba(192,193,255,0.2)]" data-alt="Minimalist GitHub icon for social links. Clean monochrome geometric shape on a transparent background, suitable for a dark mode interface." src="https://lh3.googleusercontent.com/aida/AP1WRLs41DmqSQDFqOFck7KneeUOjdqWESVElqebe6BeBRcTzGLd2ANGkFyfYNzHaLMB6oXt2f5qbGOwDMmFW6bvljPQVyHKNyMpTnrUzCzCNOH9zbxHF50A2QGoQ9hdbMQq-p3tGdBcHLefCQnc8C9UvJQlKGOy_K5udyCDuVMxAbGepfDq5BRDfuBRpegoGVHjLA6Jk9JjiLe1fWvaZf-1we33Hpa097pMQehMG0npCyJDrqNyJDoZEdETxtvc" />
           </a>
-          <a class="font-label-mono text-label-mono text-outline hover:text-primary transition-colors duration-300 hover:-translate-y-1 hover:drop-shadow-[0_0_8px_rgba(192,193,255,0.6)]" href="#">Source</a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/ayushgiriai21-cmd" target="_blank" rel="noopener" class="social-pill">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.02 3.29 9.28 7.86 10.78.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.02 11.02 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.24 2.75.12 3.04.74.81 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.08.78 2.17 0 1.57-.02 2.83-.02 3.22 0 .31.21.67.8.56A10.53 10.53 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5Z"/></svg>
+            ayushgiriai21-cmd
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://instagram.com/_ayush.ai.25_" target="_blank" rel="noopener" class="social-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            _ayush.ai.25_
+          </a>
+
+          <!-- ADD YOUR NEXT SOCIAL/CONTACT LINK HERE — copy a whole <a class="social-pill"> block -->
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
-  </body>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">© 2026 Ayush Giri — Designed &amp; built with intent.</span>
+  </div>
+</footer>
+
+<!-- All interactive behavior (scroll-reveal, tab switching, terminal
+     typewriter) lives in script.js, loaded once at the very end. -->
+<script src="script.js"></script>
+
+</body>
 </html>
