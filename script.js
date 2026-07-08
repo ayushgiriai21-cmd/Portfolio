@@ -64,7 +64,7 @@ stackTabs.forEach(tab => {
 const termBody = document.getElementById('term-body');
 
 const termScript = [
-  { type: 'cmd', text: 'who am I' },
+  { type: 'cmd', text: 'who am i' },
   { type: 'out', text: 'full_stack_developer · web · app · ai_ml' },
   { type: 'cmd', text: 'langs --count' },
   { type: 'out', text: '18+ languages · C-family, JS/TS, Python, Java, Rust, Go, Lua…' },
